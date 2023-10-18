@@ -1,0 +1,4 @@
+Tokens from file hw2-errtest2.pl0
+Number Line  Text
+hw2-errtest2.pl0:2: Number (4294967296) is too large!
+259    2    "4294967296"

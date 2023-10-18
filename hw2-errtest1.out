@@ -1,0 +1,9 @@
+Tokens from file hw2-errtest1.pl0
+Number Line  Text
+258    2    "what"
+275    2    "if"
+258    2    "we"
+258    2    "try"
+258    2    "some"
+258    2    "errors"
+hw2-errtest1.pl0:2: invalid character: '?' ('\077')

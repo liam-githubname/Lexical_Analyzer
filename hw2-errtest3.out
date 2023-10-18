@@ -1,0 +1,15 @@
+Tokens from file hw2-errtest3.pl0
+Number Line  Text
+270    2    "var"
+258    2    "bad"
+267    2    ","
+258    2    "okay"
+265    2    ";"
+258    3    "okay"
+266    3    "="
+259    3    "13"
+265    3    ";"
+258    4    "bad"
+hw2-errtest3.pl0:4: invalid character: ':' ('\072')
+259    4    "3"
+264    4    "."

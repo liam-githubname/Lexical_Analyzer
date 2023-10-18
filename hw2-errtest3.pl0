@@ -1,0 +1,4 @@
+# $Id: hw2-errtest3.pl0,v 1.1 2023/01/31 08:32:17 leavens Exp $
+var bad, okay;
+okay = 13;
+bad : 3.

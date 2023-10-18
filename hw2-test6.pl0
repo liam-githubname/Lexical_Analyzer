@@ -1,0 +1,7 @@
+# $Id: hw2-test6.pl0,v 1.1 2023/10/06 04:39:32 leavens Exp $
+const a = 3, b = 4, c = 5;
+const d = 6, e = 7, f = 8, g = 9;
+var q, r, s;
+var t, u, v;
+var w, x, y, z;
+x := 0.

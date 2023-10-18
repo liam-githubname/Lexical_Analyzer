@@ -1,0 +1,13 @@
+# $Id: hw2-test5.pl0,v 1.2 2023/10/06 04:39:32 leavens Exp $
+var i, j, k;
+var a _b c_
+const thirty 30, fourty = 40.
+procedure a_very_long_name; const aReallyLongNameWithCaps = 10;
+   a := aReallyLongNameWithCaps < c_ <= q;
+   begin
+      call a_very_long_name;
+      call aReallyBadCall2;
+      if _b >= _b then while c_ <> 0123 do begin write k; skip end;
+      read i;
+      if i = i then skip else write oops
+   end.

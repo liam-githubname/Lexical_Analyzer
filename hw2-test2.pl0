@@ -1,0 +1,11 @@
+### $Id: hw2-test2.pl0,v 1.1 2023/01/31 07:44:42 leavens Exp $ ###
+
+# Another comment
+
+
+# So many comments!
+# and junk: 3412341u234056056906098789*))(*&^%$#@@
+
+const big = 12345, two = 2;
+var x, y, z;
+procedure id; begin x := x end.

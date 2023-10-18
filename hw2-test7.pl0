@@ -1,0 +1,13 @@
+# $Id: hw2-test7.pl0,v 1.1 2023/10/06 04:39:32 leavens Exp $
+var x, y, z;
+var varname, varname2;
+begin
+  x := 10;
+  y := 5 - x - -7;
+  while x <> 0
+  do
+     begin
+       read x;
+       if x <= 0 then write x+y else write y - x
+     end
+end.
