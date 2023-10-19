@@ -7,7 +7,6 @@ int main(int argc, char *argv[]) {
 
   lexer_output();
 
-  printf("%s", argv[1]);
-
+  printf("\n");
   return 0;
 }

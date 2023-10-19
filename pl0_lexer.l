@@ -121,7 +121,15 @@ IGNORED         [ \t\v\f\r]
 "("             { tok2ast(lparensym); return lparensym; }
 ")"             { tok2ast(rparensym); return rparensym; }
 
-{DECDIGIT}+     { number2ast(numbersym); return numbersym; }
+{DECDIGIT}+     {
+                  char msgbuf[512];
+                  long long test = atoll(yytext);
+                  if (test > INT_MAX) {
+                    sprintf(msgbuf, "Number (%s) is too large!", yytext);
+                    yyerror(lexer_filename(), msgbuf);
+                  }
+                  number2ast(numbersym); return numbersym;
+                }
 {IDENT}         { ident2ast(yytext); return identsym; }
 .               { char msgbuf[512]; sprintf(msgbuf, "invalid character: '%c' ('\\0%o')", *yytext, *yytext); yyerror(lexer_filename(), msgbuf);}
 %%
