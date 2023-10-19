@@ -36,12 +36,12 @@
 
 
 // Return the file location from an AST
-file_location *ast_file_loc(AST t) {
+file_location *ast_file_loc(AST t){
     return t.generic.file_loc;
 }
 
 // Return the filename from the AST t
-const char *ast_filename(AST t) {
+const char *ast_filename(AST t){
     return ast_file_loc(t)->filename;
 }
 
@@ -51,13 +51,13 @@ unsigned int ast_line(AST t) {
 }
 
 // Return the type tag of the AST t
-AST_type ast_type_tag(AST t) {
+AST_type ast_type_tag(AST t){
     return t.generic.type_tag;
 }
 
 // Return a pointer to a fresh copy of t
 // that has been allocated on the heap
-AST *ast_heap_copy(AST t) {
+AST *ast_heap_copy(AST t){
     AST *ret = (AST *)malloc(sizeof(AST));
     if (ret == NULL) {
 	bail_with_error("Cannot allocate an AST heap copy!");
@@ -67,9 +67,7 @@ AST *ast_heap_copy(AST t) {
 }
 
 // Return an AST for a block which contains the given ASTs.
-block_t ast_block(const_decls_t const_decls, var_decls_t var_decls,
-		  proc_decls_t proc_decls, stmt_t stmt)
-{
+block_t ast_block(const_decls_t const_decls, var_decls_t var_decls, proc_decls_t proc_decls, stmt_t stmt){
     block_t ret;
     ret.file_loc = const_decls.file_loc;
     ret.type_tag = block_ast;
@@ -81,8 +79,7 @@ block_t ast_block(const_decls_t const_decls, var_decls_t var_decls,
 }
 
 // Return an AST for an empty const decls
-extern const_decls_t ast_const_decls_empty(empty_t empty)
-{
+extern const_decls_t ast_const_decls_empty(empty_t empty){
     const_decls_t ret;
     ret.file_loc = empty.file_loc;
     ret.type_tag = const_decls_ast;
