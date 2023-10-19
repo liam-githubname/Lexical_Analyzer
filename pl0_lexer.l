@@ -71,22 +71,23 @@ static void number2ast(unsigned int val)
 %}
 
  /* you can add actual definitions below */
-DECDIGIT    [0-9]
-LETTER        [_a-zA-Z]
-LETTERORDIGIT    ({LETTER}|{DECDIGIT})
-IDENT        {LETTER}({LETTERORDIGIT}*)
+
+DECDIGIT	[0-9]
+LETTER		[_a-zA-Z]
+LETTERORDIGIT	({LETTER}|{DECDIGIT})
+IDENT		{LETTER}({LETTERORDIGIT}*)
 NEWLINE         \n
 CR              \r
 EOL             ({NEWLINE}|({CR}{NEWLINE}))
 COMMENTSTART    #
 COMMENT         {COMMENTSTART}.*
-IGNORED         [\t\v\f\r\n]
+IGNORED         [ \t\v\f\r]
  /* the rules section starts after the %% below */
 %%
 
 {IGNORED}       { ; } /* do nothing */
 {COMMENT}       { ; } /* ignore comments */
-
+{EOL}           {;}
 "+"             { tok2ast(plussym); return plussym; }
 "-"             { tok2ast(minussym); return minussym; }
 "*"             { tok2ast(multsym); return multsym; }
@@ -122,7 +123,7 @@ IGNORED         [\t\v\f\r\n]
 
 {DECDIGIT}+     { number2ast(numbersym); return numbersym; }
 {IDENT}         { ident2ast(yytext); return identsym; }
-
+.               { char msgbuf[512]; sprintf(msgbuf, "invalid character: '%c' ('\\0%o')", *yytext, *yytext); yyerror(lexer_filename(), msgbuf);}
 %%
 
 /* This code goes in the user code section of the pl0_lexer.l file,
